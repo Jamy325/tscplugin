@@ -40,12 +40,12 @@ Json::Value SqliteDatabase::openDB(const char *dbPath)
     int rc = sqlite3_open(dbPath, &_database);
     if (rc)
     {
-        ret["success"] = "false";
+        ret["success"] = false;
         ret["msg"] = "open db fail";
         return ret;
     }
     
-    ret["success"] = "true";
+    ret["success"] = true;
     return ret;
 }
 
@@ -55,7 +55,7 @@ Json::Value SqliteDatabase::executeSqlCmd(const char *sql)
     Json::Value ret;
     if (!_database)
     {
-        ret["success"] = "false";
+        ret["success"] = false;
         ret["msg"] = "database not open";
         return ret;
     }
@@ -65,7 +65,7 @@ Json::Value SqliteDatabase::executeSqlCmd(const char *sql)
     
     if (rc != SQLITE_OK)
     {
-        ret["success"] = "false";
+        ret["success"] = false;
         ret["msg"] = error;
         free(error);
         return ret;
@@ -77,7 +77,7 @@ Json::Value SqliteDatabase::executeSqlCmd(const char *sql)
 
 void SqliteDatabase::closeDB()
 {
-    if (!_database)
+    if (_database)
     {
         sqlite3_close(_database);
         _database = NULL;
