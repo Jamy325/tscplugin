@@ -15,11 +15,10 @@ static int sqliteCallback(void* arg, int argc, char** argv, char** azColName)
     for (int i = 0; i < argc; ++i)
     {
         Json::Value obj;
-        obj[azColName[i]] = argv[i];
-        data.append(obj);
+        data[azColName[i]] = argv[i];
     }
     
-    (*p)["result"] = data;
+    (*p)["result"].append(data);
     
     return 0;
 }

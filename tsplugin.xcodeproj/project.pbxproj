@@ -32,20 +32,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		359700BC1CBCEF120009F874 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 359700B71CBCEF110009F874 /* testTspLugin.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3597007C1CBCEF110009F874;
-			remoteInfo = testTspLugin;
-		};
-		359700BE1CBCEF120009F874 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 359700B71CBCEF110009F874 /* testTspLugin.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 359700A01CBCEF110009F874;
-			remoteInfo = testTspLuginTests;
-		};
 		35DD34DA1CBCB1C5004F71F2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 35DD34BD1CBCB1C5004F71F2 /* Project object */;
@@ -125,7 +111,6 @@
 		359700671CBCEECB0009F874 /* testTSPluginTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "testTSPluginTests-Info.plist"; sourceTree = "<group>"; };
 		359700691CBCEECB0009F874 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3597006B1CBCEECB0009F874 /* testTSPluginTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = testTSPluginTests.m; sourceTree = "<group>"; };
-		359700B71CBCEF110009F874 /* testTspLugin.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = testTspLugin.xcodeproj; path = ../testTspLugin/testTspLugin.xcodeproj; sourceTree = "<group>"; };
 		3597FFF91CBCC8900009F874 /* sqlite2Lua.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = sqlite2Lua.mm; sourceTree = "<group>"; };
 		3597FFFA1CBCC8900009F874 /* sqlite2Lua.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite2Lua.h; sourceTree = "<group>"; };
 		35DD34C61CBCB1C5004F71F2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -216,15 +201,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		359700B81CBCEF110009F874 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				359700BD1CBCEF120009F874 /* testTspLugin.app */,
-				359700BF1CBCEF120009F874 /* testTspLuginTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		3597FFE01CBCC5780009F874 /* lib_lua */ = {
 			isa = PBXGroup;
 			children = (
@@ -284,7 +260,6 @@
 		35DD34BC1CBCB1C5004F71F2 = {
 			isa = PBXGroup;
 			children = (
-				359700B71CBCEF110009F874 /* testTspLugin.xcodeproj */,
 				3597FFFC1CBCDFAB0009F874 /* json */,
 				3597FFE01CBCC5780009F874 /* lib_lua */,
 				35DD34C81CBCB1C5004F71F2 /* tsplugin */,
@@ -433,12 +408,6 @@
 			mainGroup = 35DD34BC1CBCB1C5004F71F2;
 			productRefGroup = 35DD34D41CBCB1C5004F71F2 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 359700B81CBCEF110009F874 /* Products */;
-					ProjectRef = 359700B71CBCEF110009F874 /* testTspLugin.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				35DD34C41CBCB1C5004F71F2 /* tsplugin */,
@@ -447,23 +416,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		359700BD1CBCEF120009F874 /* testTspLugin.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = testTspLugin.app;
-			remoteRef = 359700BC1CBCEF120009F874 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		359700BF1CBCEF120009F874 /* testTspLuginTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = testTspLuginTests.xctest;
-			remoteRef = 359700BE1CBCEF120009F874 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		3597003D1CBCEECA0009F874 /* Resources */ = {
@@ -810,6 +762,7 @@
 				3597006F1CBCEECB0009F874 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		35DD34C01CBCB1C5004F71F2 /* Build configuration list for PBXProject "tsplugin" */ = {
 			isa = XCConfigurationList;
