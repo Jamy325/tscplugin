@@ -6,9 +6,25 @@
 //  Copyright (c) 2016年 Jamy. All rights reserved.
 //
 
-#ifndef __tsplugin__sqlite2Lua__
-#define __tsplugin__sqlite2Lua__
+#include "json.h"
+#import "sqlite3.h"
 
-#include <iostream>
+#ifndef __H_SQLITE2LUA__
+#define __H_SQLITE2LUA__
+class SqliteDatabase
+{
+public:
+    SqliteDatabase();
+    
+    //打开数据库
+    Json::Value openDB(const char* dbPaht);
+    //执行sql语句
+    Json::Value executeSqlCmd(const char* sql);
+    //关闭数据库
+    void closeDB();
+    
+private:
+    sqlite3* _database;
+};
 
-#endif /* defined(__tsplugin__sqlite2Lua__) */
+#endif

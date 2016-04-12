@@ -7,9 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		359700201CBCEBF90009F874 /* json_reader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 359700171CBCEBF90009F874 /* json_reader.cpp */; };
+		359700211CBCEBF90009F874 /* json_value.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 359700181CBCEBF90009F874 /* json_value.cpp */; };
+		359700221CBCEBF90009F874 /* json_writer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3597001A1CBCEBF90009F874 /* json_writer.cpp */; };
+		359700401CBCEECA0009F874 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35DD34C61CBCB1C5004F71F2 /* Foundation.framework */; };
+		359700421CBCEECB0009F874 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359700411CBCEECA0009F874 /* CoreGraphics.framework */; };
+		359700431CBCEECB0009F874 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35DD34D81CBCB1C5004F71F2 /* UIKit.framework */; };
+		359700491CBCEECB0009F874 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 359700471CBCEECB0009F874 /* InfoPlist.strings */; };
+		3597004B1CBCEECB0009F874 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3597004A1CBCEECB0009F874 /* main.m */; };
+		3597004F1CBCEECB0009F874 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3597004E1CBCEECB0009F874 /* AppDelegate.m */; };
+		359700521CBCEECB0009F874 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 359700501CBCEECB0009F874 /* Main_iPhone.storyboard */; };
+		359700551CBCEECB0009F874 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 359700531CBCEECB0009F874 /* Main_iPad.storyboard */; };
+		359700581CBCEECB0009F874 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 359700571CBCEECB0009F874 /* ViewController.m */; };
+		3597005A1CBCEECB0009F874 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 359700591CBCEECB0009F874 /* Images.xcassets */; };
+		3597FFFB1CBCC8900009F874 /* sqlite2Lua.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3597FFF91CBCC8900009F874 /* sqlite2Lua.mm */; };
 		35DD34C71CBCB1C5004F71F2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35DD34C61CBCB1C5004F71F2 /* Foundation.framework */; };
 		35DD34CC1CBCB1C5004F71F2 /* tsplugin.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 35DD34CB1CBCB1C5004F71F2 /* tsplugin.h */; };
-		35DD34CE1CBCB1C5004F71F2 /* tsplugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 35DD34CD1CBCB1C5004F71F2 /* tsplugin.m */; };
+		35DD34CE1CBCB1C5004F71F2 /* tsplugin.mm in Sources */ = {isa = PBXBuildFile; fileRef = 35DD34CD1CBCB1C5004F71F2 /* tsplugin.mm */; };
 		35DD34D61CBCB1C5004F71F2 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35DD34D51CBCB1C5004F71F2 /* XCTest.framework */; };
 		35DD34D71CBCB1C5004F71F2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35DD34C61CBCB1C5004F71F2 /* Foundation.framework */; };
 		35DD34D91CBCB1C5004F71F2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35DD34D81CBCB1C5004F71F2 /* UIKit.framework */; };
@@ -18,6 +32,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		359700BC1CBCEF120009F874 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 359700B71CBCEF110009F874 /* testTspLugin.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3597007C1CBCEF110009F874;
+			remoteInfo = testTspLugin;
+		};
+		359700BE1CBCEF120009F874 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 359700B71CBCEF110009F874 /* testTspLugin.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 359700A01CBCEF110009F874;
+			remoteInfo = testTspLuginTests;
+		};
 		35DD34DA1CBCB1C5004F71F2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 35DD34BD1CBCB1C5004F71F2 /* Project object */;
@@ -41,10 +69,69 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		359700101CBCEBF90009F874 /* autolink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = autolink.h; path = json/autolink.h; sourceTree = SOURCE_ROOT; };
+		359700111CBCEBF90009F874 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = config.h; path = json/config.h; sourceTree = SOURCE_ROOT; };
+		359700121CBCEBF90009F874 /* features.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = features.h; path = json/features.h; sourceTree = SOURCE_ROOT; };
+		359700131CBCEBF90009F874 /* forwards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = forwards.h; path = json/forwards.h; sourceTree = SOURCE_ROOT; };
+		359700141CBCEBF90009F874 /* json_batchallocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = json_batchallocator.h; path = json/json_batchallocator.h; sourceTree = SOURCE_ROOT; };
+		359700151CBCEBF90009F874 /* json_internalarray.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = json_internalarray.inl; path = json/json_internalarray.inl; sourceTree = SOURCE_ROOT; };
+		359700161CBCEBF90009F874 /* json_internalmap.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = json_internalmap.inl; path = json/json_internalmap.inl; sourceTree = SOURCE_ROOT; };
+		359700171CBCEBF90009F874 /* json_reader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = json_reader.cpp; path = json/json_reader.cpp; sourceTree = SOURCE_ROOT; };
+		359700181CBCEBF90009F874 /* json_value.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = json_value.cpp; path = json/json_value.cpp; sourceTree = SOURCE_ROOT; };
+		359700191CBCEBF90009F874 /* json_valueiterator.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = json_valueiterator.inl; path = json/json_valueiterator.inl; sourceTree = SOURCE_ROOT; };
+		3597001A1CBCEBF90009F874 /* json_writer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = json_writer.cpp; path = json/json_writer.cpp; sourceTree = SOURCE_ROOT; };
+		3597001B1CBCEBF90009F874 /* json.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = json.h; path = json/json.h; sourceTree = SOURCE_ROOT; };
+		3597001C1CBCEBF90009F874 /* reader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = reader.h; path = json/reader.h; sourceTree = SOURCE_ROOT; };
+		3597001D1CBCEBF90009F874 /* sconscript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = sconscript; path = json/sconscript; sourceTree = SOURCE_ROOT; };
+		3597001E1CBCEBF90009F874 /* value.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = value.h; path = json/value.h; sourceTree = SOURCE_ROOT; };
+		3597001F1CBCEBF90009F874 /* writer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = writer.h; path = json/writer.h; sourceTree = SOURCE_ROOT; };
+		359700231CBCEC150009F874 /* lapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lapi.h; path = lib_lua/lapi.h; sourceTree = SOURCE_ROOT; };
+		359700241CBCEC150009F874 /* lauxlib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lauxlib.h; path = lib_lua/lauxlib.h; sourceTree = SOURCE_ROOT; };
+		359700251CBCEC150009F874 /* lcode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lcode.h; path = lib_lua/lcode.h; sourceTree = SOURCE_ROOT; };
+		359700261CBCEC150009F874 /* lctype.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lctype.h; path = lib_lua/lctype.h; sourceTree = SOURCE_ROOT; };
+		359700271CBCEC150009F874 /* ldebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ldebug.h; path = lib_lua/ldebug.h; sourceTree = SOURCE_ROOT; };
+		359700281CBCEC150009F874 /* ldo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ldo.h; path = lib_lua/ldo.h; sourceTree = SOURCE_ROOT; };
+		359700291CBCEC150009F874 /* lfunc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lfunc.h; path = lib_lua/lfunc.h; sourceTree = SOURCE_ROOT; };
+		3597002A1CBCEC150009F874 /* lgc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lgc.h; path = lib_lua/lgc.h; sourceTree = SOURCE_ROOT; };
+		3597002B1CBCEC150009F874 /* llex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = llex.h; path = lib_lua/llex.h; sourceTree = SOURCE_ROOT; };
+		3597002C1CBCEC150009F874 /* llimits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = llimits.h; path = lib_lua/llimits.h; sourceTree = SOURCE_ROOT; };
+		3597002D1CBCEC150009F874 /* lmem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lmem.h; path = lib_lua/lmem.h; sourceTree = SOURCE_ROOT; };
+		3597002E1CBCEC150009F874 /* lobject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lobject.h; path = lib_lua/lobject.h; sourceTree = SOURCE_ROOT; };
+		3597002F1CBCEC150009F874 /* lopcodes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lopcodes.h; path = lib_lua/lopcodes.h; sourceTree = SOURCE_ROOT; };
+		359700301CBCEC150009F874 /* lparser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lparser.h; path = lib_lua/lparser.h; sourceTree = SOURCE_ROOT; };
+		359700311CBCEC150009F874 /* lstate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lstate.h; path = lib_lua/lstate.h; sourceTree = SOURCE_ROOT; };
+		359700321CBCEC150009F874 /* lstring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lstring.h; path = lib_lua/lstring.h; sourceTree = SOURCE_ROOT; };
+		359700331CBCEC150009F874 /* ltable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ltable.h; path = lib_lua/ltable.h; sourceTree = SOURCE_ROOT; };
+		359700341CBCEC150009F874 /* ltm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ltm.h; path = lib_lua/ltm.h; sourceTree = SOURCE_ROOT; };
+		359700351CBCEC150009F874 /* lua.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lua.h; path = lib_lua/lua.h; sourceTree = SOURCE_ROOT; };
+		359700361CBCEC150009F874 /* luaconf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = luaconf.h; path = lib_lua/luaconf.h; sourceTree = SOURCE_ROOT; };
+		359700371CBCEC150009F874 /* lualib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lualib.h; path = lib_lua/lualib.h; sourceTree = SOURCE_ROOT; };
+		359700381CBCEC150009F874 /* lundump.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lundump.h; path = lib_lua/lundump.h; sourceTree = SOURCE_ROOT; };
+		359700391CBCEC150009F874 /* lvm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lvm.h; path = lib_lua/lvm.h; sourceTree = SOURCE_ROOT; };
+		3597003A1CBCEC150009F874 /* lzio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lzio.h; path = lib_lua/lzio.h; sourceTree = SOURCE_ROOT; };
+		3597003F1CBCEECA0009F874 /* testTSPlugin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testTSPlugin.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		359700411CBCEECA0009F874 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		359700461CBCEECB0009F874 /* testTSPlugin-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "testTSPlugin-Info.plist"; sourceTree = "<group>"; };
+		359700481CBCEECB0009F874 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3597004A1CBCEECB0009F874 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3597004C1CBCEECB0009F874 /* testTSPlugin-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "testTSPlugin-Prefix.pch"; sourceTree = "<group>"; };
+		3597004D1CBCEECB0009F874 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3597004E1CBCEECB0009F874 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		359700511CBCEECB0009F874 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		359700541CBCEECB0009F874 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		359700561CBCEECB0009F874 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		359700571CBCEECB0009F874 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		359700591CBCEECB0009F874 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		359700671CBCEECB0009F874 /* testTSPluginTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "testTSPluginTests-Info.plist"; sourceTree = "<group>"; };
+		359700691CBCEECB0009F874 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3597006B1CBCEECB0009F874 /* testTSPluginTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = testTSPluginTests.m; sourceTree = "<group>"; };
+		359700B71CBCEF110009F874 /* testTspLugin.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = testTspLugin.xcodeproj; path = ../testTspLugin/testTspLugin.xcodeproj; sourceTree = "<group>"; };
+		3597FFF91CBCC8900009F874 /* sqlite2Lua.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = sqlite2Lua.mm; sourceTree = "<group>"; };
+		3597FFFA1CBCC8900009F874 /* sqlite2Lua.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite2Lua.h; sourceTree = "<group>"; };
 		35DD34C61CBCB1C5004F71F2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		35DD34CA1CBCB1C5004F71F2 /* tsplugin-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "tsplugin-Prefix.pch"; sourceTree = "<group>"; };
 		35DD34CB1CBCB1C5004F71F2 /* tsplugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tsplugin.h; sourceTree = "<group>"; };
-		35DD34CD1CBCB1C5004F71F2 /* tsplugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = tsplugin.m; sourceTree = "<group>"; };
+		35DD34CD1CBCB1C5004F71F2 /* tsplugin.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = tsplugin.mm; sourceTree = "<group>"; };
 		35DD34D31CBCB1C5004F71F2 /* tspluginTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tspluginTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		35DD34D51CBCB1C5004F71F2 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		35DD34D81CBCB1C5004F71F2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -54,6 +141,16 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3597003C1CBCEECA0009F874 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				359700421CBCEECB0009F874 /* CoreGraphics.framework in Frameworks */,
+				359700431CBCEECB0009F874 /* UIKit.framework in Frameworks */,
+				359700401CBCEECA0009F874 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		35DD34C21CBCB1C5004F71F2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -75,11 +172,125 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		359700441CBCEECB0009F874 /* testTSPlugin */ = {
+			isa = PBXGroup;
+			children = (
+				3597004D1CBCEECB0009F874 /* AppDelegate.h */,
+				3597004E1CBCEECB0009F874 /* AppDelegate.m */,
+				359700501CBCEECB0009F874 /* Main_iPhone.storyboard */,
+				359700531CBCEECB0009F874 /* Main_iPad.storyboard */,
+				359700561CBCEECB0009F874 /* ViewController.h */,
+				359700571CBCEECB0009F874 /* ViewController.m */,
+				359700591CBCEECB0009F874 /* Images.xcassets */,
+				359700451CBCEECB0009F874 /* Supporting Files */,
+			);
+			path = testTSPlugin;
+			sourceTree = "<group>";
+		};
+		359700451CBCEECB0009F874 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				359700461CBCEECB0009F874 /* testTSPlugin-Info.plist */,
+				359700471CBCEECB0009F874 /* InfoPlist.strings */,
+				3597004A1CBCEECB0009F874 /* main.m */,
+				3597004C1CBCEECB0009F874 /* testTSPlugin-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		359700651CBCEECB0009F874 /* testTSPluginTests */ = {
+			isa = PBXGroup;
+			children = (
+				3597006B1CBCEECB0009F874 /* testTSPluginTests.m */,
+				359700661CBCEECB0009F874 /* Supporting Files */,
+			);
+			path = testTSPluginTests;
+			sourceTree = "<group>";
+		};
+		359700661CBCEECB0009F874 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				359700671CBCEECB0009F874 /* testTSPluginTests-Info.plist */,
+				359700681CBCEECB0009F874 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		359700B81CBCEF110009F874 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				359700BD1CBCEF120009F874 /* testTspLugin.app */,
+				359700BF1CBCEF120009F874 /* testTspLuginTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3597FFE01CBCC5780009F874 /* lib_lua */ = {
+			isa = PBXGroup;
+			children = (
+				359700231CBCEC150009F874 /* lapi.h */,
+				359700241CBCEC150009F874 /* lauxlib.h */,
+				359700251CBCEC150009F874 /* lcode.h */,
+				359700261CBCEC150009F874 /* lctype.h */,
+				359700271CBCEC150009F874 /* ldebug.h */,
+				359700281CBCEC150009F874 /* ldo.h */,
+				359700291CBCEC150009F874 /* lfunc.h */,
+				3597002A1CBCEC150009F874 /* lgc.h */,
+				3597002B1CBCEC150009F874 /* llex.h */,
+				3597002C1CBCEC150009F874 /* llimits.h */,
+				3597002D1CBCEC150009F874 /* lmem.h */,
+				3597002E1CBCEC150009F874 /* lobject.h */,
+				3597002F1CBCEC150009F874 /* lopcodes.h */,
+				359700301CBCEC150009F874 /* lparser.h */,
+				359700311CBCEC150009F874 /* lstate.h */,
+				359700321CBCEC150009F874 /* lstring.h */,
+				359700331CBCEC150009F874 /* ltable.h */,
+				359700341CBCEC150009F874 /* ltm.h */,
+				359700351CBCEC150009F874 /* lua.h */,
+				359700361CBCEC150009F874 /* luaconf.h */,
+				359700371CBCEC150009F874 /* lualib.h */,
+				359700381CBCEC150009F874 /* lundump.h */,
+				359700391CBCEC150009F874 /* lvm.h */,
+				3597003A1CBCEC150009F874 /* lzio.h */,
+			);
+			name = lib_lua;
+			path = include;
+			sourceTree = "<group>";
+		};
+		3597FFFC1CBCDFAB0009F874 /* json */ = {
+			isa = PBXGroup;
+			children = (
+				359700101CBCEBF90009F874 /* autolink.h */,
+				359700111CBCEBF90009F874 /* config.h */,
+				359700121CBCEBF90009F874 /* features.h */,
+				359700131CBCEBF90009F874 /* forwards.h */,
+				359700141CBCEBF90009F874 /* json_batchallocator.h */,
+				359700151CBCEBF90009F874 /* json_internalarray.inl */,
+				359700161CBCEBF90009F874 /* json_internalmap.inl */,
+				359700171CBCEBF90009F874 /* json_reader.cpp */,
+				359700181CBCEBF90009F874 /* json_value.cpp */,
+				359700191CBCEBF90009F874 /* json_valueiterator.inl */,
+				3597001A1CBCEBF90009F874 /* json_writer.cpp */,
+				3597001B1CBCEBF90009F874 /* json.h */,
+				3597001C1CBCEBF90009F874 /* reader.h */,
+				3597001D1CBCEBF90009F874 /* sconscript */,
+				3597001E1CBCEBF90009F874 /* value.h */,
+				3597001F1CBCEBF90009F874 /* writer.h */,
+			);
+			name = json;
+			path = lib_json;
+			sourceTree = "<group>";
+		};
 		35DD34BC1CBCB1C5004F71F2 = {
 			isa = PBXGroup;
 			children = (
+				359700B71CBCEF110009F874 /* testTspLugin.xcodeproj */,
+				3597FFFC1CBCDFAB0009F874 /* json */,
+				3597FFE01CBCC5780009F874 /* lib_lua */,
 				35DD34C81CBCB1C5004F71F2 /* tsplugin */,
 				35DD34DC1CBCB1C5004F71F2 /* tspluginTests */,
+				359700441CBCEECB0009F874 /* testTSPlugin */,
+				359700651CBCEECB0009F874 /* testTSPluginTests */,
 				35DD34C51CBCB1C5004F71F2 /* Frameworks */,
 				35DD34D41CBCB1C5004F71F2 /* Products */,
 			);
@@ -91,6 +302,7 @@
 				35DD34C61CBCB1C5004F71F2 /* Foundation.framework */,
 				35DD34D51CBCB1C5004F71F2 /* XCTest.framework */,
 				35DD34D81CBCB1C5004F71F2 /* UIKit.framework */,
+				359700411CBCEECA0009F874 /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -99,8 +311,10 @@
 			isa = PBXGroup;
 			children = (
 				35DD34CB1CBCB1C5004F71F2 /* tsplugin.h */,
-				35DD34CD1CBCB1C5004F71F2 /* tsplugin.m */,
+				35DD34CD1CBCB1C5004F71F2 /* tsplugin.mm */,
 				35DD34C91CBCB1C5004F71F2 /* Supporting Files */,
+				3597FFF91CBCC8900009F874 /* sqlite2Lua.mm */,
+				3597FFFA1CBCC8900009F874 /* sqlite2Lua.h */,
 			);
 			path = tsplugin;
 			sourceTree = "<group>";
@@ -117,6 +331,7 @@
 			isa = PBXGroup;
 			children = (
 				35DD34D31CBCB1C5004F71F2 /* tspluginTests.xctest */,
+				3597003F1CBCEECA0009F874 /* testTSPlugin.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -142,6 +357,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		3597003E1CBCEECA0009F874 /* testTSPlugin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3597006D1CBCEECB0009F874 /* Build configuration list for PBXNativeTarget "testTSPlugin" */;
+			buildPhases = (
+				3597003B1CBCEECA0009F874 /* Sources */,
+				3597003C1CBCEECA0009F874 /* Frameworks */,
+				3597003D1CBCEECA0009F874 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = testTSPlugin;
+			productName = testTSPlugin;
+			productReference = 3597003F1CBCEECA0009F874 /* testTSPlugin.app */;
+			productType = "com.apple.product-type.application";
+		};
 		35DD34C41CBCB1C5004F71F2 /* tsplugin */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 35DD34E61CBCB1C5004F71F2 /* Build configuration list for PBXNativeTarget "tsplugin" */;
@@ -184,6 +416,11 @@
 			attributes = {
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "___FULLUSERNAME___";
+				TargetAttributes = {
+					35DD34D21CBCB1C5004F71F2 = {
+						TestTargetID = 35DD34C41CBCB1C5004F71F2;
+					};
+				};
 			};
 			buildConfigurationList = 35DD34C01CBCB1C5004F71F2 /* Build configuration list for PBXProject "tsplugin" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -191,19 +428,55 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 35DD34BC1CBCB1C5004F71F2;
 			productRefGroup = 35DD34D41CBCB1C5004F71F2 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 359700B81CBCEF110009F874 /* Products */;
+					ProjectRef = 359700B71CBCEF110009F874 /* testTspLugin.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				35DD34C41CBCB1C5004F71F2 /* tsplugin */,
 				35DD34D21CBCB1C5004F71F2 /* tspluginTests */,
+				3597003E1CBCEECA0009F874 /* testTSPlugin */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		359700BD1CBCEF120009F874 /* testTspLugin.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = testTspLugin.app;
+			remoteRef = 359700BC1CBCEF120009F874 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		359700BF1CBCEF120009F874 /* testTspLuginTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = testTspLuginTests.xctest;
+			remoteRef = 359700BE1CBCEF120009F874 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
+		3597003D1CBCEECA0009F874 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				359700551CBCEECB0009F874 /* Main_iPad.storyboard in Resources */,
+				3597005A1CBCEECB0009F874 /* Images.xcassets in Resources */,
+				359700521CBCEECB0009F874 /* Main_iPhone.storyboard in Resources */,
+				359700491CBCEECB0009F874 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		35DD34D11CBCB1C5004F71F2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -215,11 +488,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3597003B1CBCEECA0009F874 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				359700581CBCEECB0009F874 /* ViewController.m in Sources */,
+				3597004F1CBCEECB0009F874 /* AppDelegate.m in Sources */,
+				3597004B1CBCEECB0009F874 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		35DD34C11CBCB1C5004F71F2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35DD34CE1CBCB1C5004F71F2 /* tsplugin.m in Sources */,
+				35DD34CE1CBCB1C5004F71F2 /* tsplugin.mm in Sources */,
+				359700211CBCEBF90009F874 /* json_value.cpp in Sources */,
+				359700201CBCEBF90009F874 /* json_reader.cpp in Sources */,
+				3597FFFB1CBCC8900009F874 /* sqlite2Lua.mm in Sources */,
+				359700221CBCEBF90009F874 /* json_writer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +529,38 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		359700471CBCEECB0009F874 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				359700481CBCEECB0009F874 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		359700501CBCEECB0009F874 /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				359700511CBCEECB0009F874 /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		359700531CBCEECB0009F874 /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				359700541CBCEECB0009F874 /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		359700681CBCEECB0009F874 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				359700691CBCEECB0009F874 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		35DD34DF1CBCB1C5004F71F2 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -253,6 +572,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		3597006E1CBCEECB0009F874 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "testTSPlugin/testTSPlugin-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "testTSPlugin/testTSPlugin-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		3597006F1CBCEECB0009F874 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "testTSPlugin/testTSPlugin-Prefix.pch";
+				INFOPLIST_FILE = "testTSPlugin/testTSPlugin-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 		35DD34E41CBCB1C5004F71F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -270,6 +631,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				EXECUTABLE_EXTENSION = dylib;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -284,8 +646,20 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(PROJECT_DIR)/include",
+				);
+				INSTALL_PATH = "@executable_path/";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MACH_O_TYPE = mh_dylib;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-undefined",
+					dynamic_lookup,
+				);
+				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -308,6 +682,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
+				EXECUTABLE_EXTENSION = dylib;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -315,7 +690,19 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(PROJECT_DIR)/include",
+				);
+				INSTALL_PATH = "@executable_path/";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MACH_O_TYPE = mh_dylib;
+				OTHER_LDFLAGS = (
+					"-undefined",
+					dynamic_lookup,
+				);
+				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -324,10 +711,24 @@
 		35DD34E71CBCB1C5004F71F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				DSTROOT = /tmp/tsplugin.dst;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "tsplugin/tsplugin-Prefix.pch";
-				OTHER_LDFLAGS = "-ObjC";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(PROJECT_DIR)/lib_lua",
+					"$(PROJECT_DIR)/json",
+					"$(PROJECT_DIR)",
+				);
+				INSTALL_PATH = "@executable_path";
+				MACH_O_TYPE = mh_dylib;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-undefined",
+					dynamic_lookup,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -336,10 +737,24 @@
 		35DD34E81CBCB1C5004F71F2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				DSTROOT = /tmp/tsplugin.dst;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "tsplugin/tsplugin-Prefix.pch";
-				OTHER_LDFLAGS = "-ObjC";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(PROJECT_DIR)/lib_lua",
+					"$(PROJECT_DIR)/json",
+					"$(PROJECT_DIR)",
+				);
+				INSTALL_PATH = "@executable_path";
+				MACH_O_TYPE = mh_dylib;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-undefined",
+					dynamic_lookup,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -348,6 +763,7 @@
 		35DD34EA1CBCB1C5004F71F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/tsplugin.dylib";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -361,6 +777,7 @@
 				);
 				INFOPLIST_FILE = "tspluginTests/tspluginTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
@@ -368,6 +785,7 @@
 		35DD34EB1CBCB1C5004F71F2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/tsplugin.dylib";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -377,6 +795,7 @@
 				GCC_PREFIX_HEADER = "tsplugin/tsplugin-Prefix.pch";
 				INFOPLIST_FILE = "tspluginTests/tspluginTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
@@ -384,6 +803,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3597006D1CBCEECB0009F874 /* Build configuration list for PBXNativeTarget "testTSPlugin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3597006E1CBCEECB0009F874 /* Debug */,
+				3597006F1CBCEECB0009F874 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		35DD34C01CBCB1C5004F71F2 /* Build configuration list for PBXProject "tsplugin" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -400,6 +827,7 @@
 				35DD34E81CBCB1C5004F71F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		35DD34E91CBCB1C5004F71F2 /* Build configuration list for PBXNativeTarget "tspluginTests" */ = {
 			isa = XCConfigurationList;
@@ -408,6 +836,7 @@
 				35DD34EB1CBCB1C5004F71F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
