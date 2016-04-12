@@ -65,7 +65,7 @@ static int tsp_freeDB(lua_State* L)
 static int tsp_opendb(lua_State*L)
 {
     const char* str = "{\"success\":false,\"msg\":\"invalid arg\"}";
-    if (lua_islightuserdata(L, 1) || !lua_isstring(L, 2))
+    if (!lua_islightuserdata(L, 1) || !lua_isstring(L, 2))
     {
         lua_pushstring(L, str);
         return 1;
@@ -88,7 +88,7 @@ static int tsp_opendb(lua_State*L)
 static int tsp_executeSql(lua_State*L)
 {
     const char* str = "{\"success\":false,\"msg\":\"invalid arg\"}";
-    if (lua_islightuserdata(L, 1) || !lua_isstring(L, 2))
+    if (!lua_islightuserdata(L, 1) || !lua_isstring(L, 2))
     {
         lua_pushstring(L, str);
         return 1;
@@ -111,7 +111,7 @@ static int tsp_executeSql(lua_State*L)
 
 static int tsp_closeDB(lua_State*L)
 {
-    if (lua_islightuserdata(L, 1) )
+    if (!lua_islightuserdata(L, 1) )
     {
         return 0;
     }
