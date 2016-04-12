@@ -16,14 +16,17 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "lua.h"
-#include "lualib.h"
-#include "lauxlib.h"
+
 #import <objc/runtime.h>
 #import <Foundation/Foundation.h>
 #import <UIKit/UIDevice.h>
 #import <sqlite3.h>
 #include "sqlite2Lua.h"
+extern "C" {
+#include "lua.h"
+#include "lualib.h"
+#include "lauxlib.h"
+
 
 /*  库 open 函数的前置声明   */
 int luaopen_mt(lua_State *L);
@@ -47,7 +50,7 @@ static int tsp_newDB(lua_State* L)
 
 static int tsp_freeDB(lua_State* L)
 {
-    if (!lua_isuserdata(L, 1))
+    if (!lua_islightuserdata(L, 1))
     {
         lua_pushinteger(L, 1);
         return 1;
@@ -62,7 +65,7 @@ static int tsp_freeDB(lua_State* L)
 static int tsp_opendb(lua_State*L)
 {
     const char* str = "{\"success\":false,\"msg\":\"invalid arg\"}";
-    if (lua_isuserdata(L, 1) || !lua_isstring(L, 2))
+    if (lua_islightuserdata(L, 1) || !lua_isstring(L, 2))
     {
         lua_pushstring(L, str);
         return 1;
@@ -85,7 +88,7 @@ static int tsp_opendb(lua_State*L)
 static int tsp_executeSql(lua_State*L)
 {
     const char* str = "{\"success\":false,\"msg\":\"invalid arg\"}";
-    if (lua_isuserdata(L, 1) || !lua_isstring(L, 2))
+    if (lua_islightuserdata(L, 1) || !lua_isstring(L, 2))
     {
         lua_pushstring(L, str);
         return 1;
@@ -108,13 +111,12 @@ static int tsp_executeSql(lua_State*L)
 
 static int tsp_closeDB(lua_State*L)
 {
-    if (lua_isuserdata(L, 1) )
+    if (lua_islightuserdata(L, 1) )
     {
         return 0;
     }
     
     SqliteDatabase* p = (SqliteDatabase*)lua_touserdata(L, 1);
-    const char* dbPath = lua_tostring(L, 2);
     if (!p)
     {
         return 0;
@@ -142,4 +144,4 @@ int luaopen_tsplugin(lua_State *L)//注意, mt为扩展库的文件名
     return 1;
 }
 
-
+}
