@@ -810,6 +810,7 @@
 				3597006F1CBCEECB0009F874 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		35DD34C01CBCB1C5004F71F2 /* Build configuration list for PBXProject "tsplugin" */ = {
 			isa = XCConfigurationList;
