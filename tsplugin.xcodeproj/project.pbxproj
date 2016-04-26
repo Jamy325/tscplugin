@@ -29,6 +29,7 @@
 		35DD34D91CBCB1C5004F71F2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35DD34D81CBCB1C5004F71F2 /* UIKit.framework */; };
 		35DD34E11CBCB1C5004F71F2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 35DD34DF1CBCB1C5004F71F2 /* InfoPlist.strings */; };
 		35DD34E31CBCB1C5004F71F2 /* tspluginTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 35DD34E21CBCB1C5004F71F2 /* tspluginTests.m */; };
+		35F100581CCF70A90007E447 /* AlbumHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 35F100571CCF70A90007E447 /* AlbumHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +124,8 @@
 		35DD34DE1CBCB1C5004F71F2 /* tspluginTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "tspluginTests-Info.plist"; sourceTree = "<group>"; };
 		35DD34E01CBCB1C5004F71F2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		35DD34E21CBCB1C5004F71F2 /* tspluginTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = tspluginTests.m; sourceTree = "<group>"; };
+		35F100561CCF70A90007E447 /* AlbumHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumHelper.h; sourceTree = "<group>"; };
+		35F100571CCF70A90007E447 /* AlbumHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,6 +288,8 @@
 		35DD34C81CBCB1C5004F71F2 /* tsplugin */ = {
 			isa = PBXGroup;
 			children = (
+				35F100561CCF70A90007E447 /* AlbumHelper.h */,
+				35F100571CCF70A90007E447 /* AlbumHelper.m */,
 				35DD34CB1CBCB1C5004F71F2 /* tsplugin.h */,
 				35DD34CD1CBCB1C5004F71F2 /* tsplugin.mm */,
 				35DD34C91CBCB1C5004F71F2 /* Supporting Files */,
@@ -455,6 +460,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				35DD34CE1CBCB1C5004F71F2 /* tsplugin.mm in Sources */,
+				35F100581CCF70A90007E447 /* AlbumHelper.m in Sources */,
 				359700211CBCEBF90009F874 /* json_value.cpp in Sources */,
 				359700201CBCEBF90009F874 /* json_reader.cpp in Sources */,
 				3597FFFB1CBCC8900009F874 /* sqlite2Lua.mm in Sources */,

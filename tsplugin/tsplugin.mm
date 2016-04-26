@@ -7,6 +7,8 @@
 //
 
 #import "tsplugin.h"
+#import "AlbumHelper.h"
+
 
 @implementation tsplugin
 
@@ -125,6 +127,63 @@ static int tsp_closeDB(lua_State*L)
     p->closeDB();
     return 0;
 }
+    
+    
+static int tsp_createAlbum(lua_State* L)
+{
+    const char* str = "{\"success\":false, \"msg\":\"invalid arg\"}";
+    if (!lua_islightuserdata(L, 1))
+    {
+        lua_pushstring(L, str);
+        return 1;
+    }
+    
+    const char* strAlbume = lua_tostring(L, 1);
+    NSString* albume = [NSString stringWithUTF8String:strAlbume];
+    [AlbumHelper createAlbum:albume];
+
+    lua_pushstring(L, "{\"success\":true}");
+    return 1;
+}
+    
+    
+static int tsp_saveImageToCustomeAlbume(lua_State* L)
+{
+    const char* str = "{\"success\":false,\"msg\":\"invalid arg\"}";
+    if (!lua_isstring(L, 1) || !lua_isstring(L, 2))
+    {
+        lua_pushstring(L, str);
+        return 1;
+    }
+    
+    const char* strImgPath = lua_tostring(L, 1);
+    const char* strAblume = lua_tostring(L, 2);
+    
+    [AlbumHelper saveImageToCustomeAlbume:[NSString stringWithUTF8String:strImgPath] albume:[NSString stringWithUTF8String:strAblume]];
+    
+    lua_pushstring(L, "{\"success\":true}");
+    return 1;
+}
+    
+    
+    
+static int tsp_removeAllImageInAblume(lua_State* L)
+{
+    const char* str = "{\"success\":false, \"msg\":\"invalid arg\"}";
+    if (!lua_islightuserdata(L, 1))
+    {
+        lua_pushstring(L, str);
+        return 1;
+    }
+    
+    const char* strAlbume = lua_tostring(L, 1);
+    NSString* albume = [NSString stringWithUTF8String:strAlbume];
+    [AlbumHelper removeAllImageInAblume:albume];
+    
+    lua_pushstring(L, "{\"success\":true}");
+    return 1;
+}
+    
 
 //注册函数库
 static const luaL_Reg mt_lib[] = {
@@ -134,6 +193,9 @@ static const luaL_Reg mt_lib[] = {
     {"openDB",  tsp_opendb},    //获取设备名称
     {"executeSql",  tsp_executeSql},    //获取设备名称
     {"closeDB",  tsp_closeDB},    //获取设备名称
+    {"createAlbum", tsp_createAlbum},//创建自定义相册
+    {"saveImageToCustomeAlbume", tsp_saveImageToCustomeAlbume},//保存图片到相册里
+    {"removeAllImageInAblume", tsp_removeAllImageInAblume},//清空相册
     {NULL, NULL}
 };
 
