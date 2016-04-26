@@ -132,13 +132,14 @@ static int tsp_closeDB(lua_State*L)
 static int tsp_createAlbum(lua_State* L)
 {
     const char* str = "{\"success\":false, \"msg\":\"invalid arg\"}";
-    if (!lua_islightuserdata(L, 1))
+    if (!lua_isstring(L, 1))
     {
         lua_pushstring(L, str);
         return 1;
     }
     
     const char* strAlbume = lua_tostring(L, 1);
+    
     NSString* albume = [NSString stringWithUTF8String:strAlbume];
     [AlbumHelper createAlbum:albume];
 
@@ -170,7 +171,7 @@ static int tsp_saveImageToCustomeAlbume(lua_State* L)
 static int tsp_removeAllImageInAblume(lua_State* L)
 {
     const char* str = "{\"success\":false, \"msg\":\"invalid arg\"}";
-    if (!lua_islightuserdata(L, 1))
+    if (!lua_isstring(L, 1))
     {
         lua_pushstring(L, str);
         return 1;

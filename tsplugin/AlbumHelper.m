@@ -82,8 +82,16 @@
 
 + (void)createAlbum:(NSString*) albueName
 {
+    /**阻塞线程*/
+    // 创建一个信号量，值为0
+    dispatch_semaphore_t sema = dispatch_semaphore_create(0);
+    // 在一个操作结束后发信号，这会使得信号量+1
+
     ALAssetsLibrary *assetsLibrary = [[ALAssetsLibrary alloc] init];
-    NSMutableArray *groups=[[NSMutableArray alloc]init];
+    [assetsLibrary retain];
+    NSMutableArray *groups=[[NSMutableArray alloc] init];
+    [groups retain];
+    
     ALAssetsLibraryGroupsEnumerationResultsBlock listGroupBlock = ^(ALAssetsGroup *group, BOOL *stop)
     {
         if (group)
@@ -109,16 +117,21 @@
             {
                 //do add a group named "XXXX"
                 [assetsLibrary addAssetsGroupAlbumWithName:albueName
-                                               resultBlock:^(ALAssetsGroup *group)
+                                               resultBlock:^(ALAssetsGroup *g)
                  {
-                     [groups addObject:group];
+                     if (g){
+                         [groups addObject:g];
+                     }
                      
+                      dispatch_semaphore_signal(sema);
                  }
-                                              failureBlock:nil];
+                                              failureBlock:^(NSError* err){
+                                                  NSLog(@"error:%@", err);
+                                                  dispatch_semaphore_signal(sema);
+                                              }];
                 haveHDRGroup = YES;
             }
         }
-        
     };
     
     
@@ -131,7 +144,14 @@
                                              cancelButtonTitle:@"确定"
                                              otherButtonTitles:nil, nil];
         [alert show];
+          dispatch_semaphore_signal(sema);
     }];
+    
+    // 一开始执行到这里信号量为0，线程被阻塞，直到上述操作完成使信号量+1,线程解除阻塞
+    dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
+    [assetsLibrary release];
+    [groups release];
+    
 }
 
 
@@ -140,12 +160,13 @@
     if (img == nil){
         return;
     }
-//    [img retain];
+   [img retain];
+    dispatch_semaphore_t sema = dispatch_semaphore_create(0);
     
     [AlbumHelper saveToAlbumWithMetadata:nil imageData:UIImagePNGRepresentation(img) customAlbumName:albueName completionBlock:^
      {
          //这里可以创建添加成功的方法
-    //     [img release];
+         dispatch_semaphore_signal(sema);
      }
                      failureBlock:^(NSError *error)
      {
@@ -159,15 +180,24 @@
                  
                  [alert show];
              }
+             
+              dispatch_semaphore_signal(sema);
          });
      }];
+    
+        dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
+        [img release];
 }
 
 
 
 +(void) removeAllImageInAblume:(NSString*)albumname
 {
+    dispatch_semaphore_t sema = dispatch_semaphore_create(0);
+    // 在一个操作结束后发信号，这会使得信号量+1
+    
     ALAssetsLibrary *lib = [[ALAssetsLibrary alloc]init];
+    [lib retain];
     [lib enumerateGroupsWithTypes:ALAssetsGroupAlbum usingBlock:^(ALAssetsGroup *group, BOOL *stop) {
         
         NSString *name =[group valueForProperty:ALAssetsGroupPropertyName];
@@ -182,9 +212,17 @@
                 }
             }];
         }
+        if (*stop){
+            dispatch_semaphore_signal(sema);
+        }
+        
     } failureBlock:^(NSError *error) {
         NSLog(@"Error:%@ ", error);
+        dispatch_semaphore_signal(sema);
     }];
+    
+    dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
+    [lib release];
     
     /**
      ios 8 以上用这个
