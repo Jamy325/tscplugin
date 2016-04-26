@@ -156,21 +156,37 @@
 
 
 +(void) saveImageToCustomeAlbume:(NSString*) imagePath albume:(NSString*)albueName{
-    UIImage* img = [UIImage imageNamed:imagePath];
+    UIImage* img = [UIImage imageWithContentsOfFile:imagePath];
     if (img == nil){
         return;
     }
    [img retain];
-    dispatch_semaphore_t sema = dispatch_semaphore_create(0);
+  //  dispatch_semaphore_t sema = dispatch_semaphore_create(0);
     
-    [AlbumHelper saveToAlbumWithMetadata:nil imageData:UIImagePNGRepresentation(img) customAlbumName:albueName completionBlock:^
+    NSString* low = [imagePath lowercaseString];
+    NSData* d = nil;
+    
+    if ([low rangeOfString:@".jpg"].length > 0){
+        d = UIImageJPEGRepresentation(img, 1);
+    }
+    
+    if ([low rangeOfString:@".png"].length > 0){
+        d = UIImagePNGRepresentation(img);
+    }
+    if (d == nil){
+        return;
+    }
+    
+    
+    [AlbumHelper saveToAlbumWithMetadata:nil imageData:d customAlbumName:albueName completionBlock:^
      {
          //这里可以创建添加成功的方法
-         dispatch_semaphore_signal(sema);
+          [img release];
+    //     dispatch_semaphore_signal(sema);
      }
                      failureBlock:^(NSError *error)
      {
-     //    [img release];
+         [img release];
          //处理添加失败的方法显示alert让它回到主线程执行，不然那个框框死活不肯弹出来
          dispatch_async(dispatch_get_main_queue(), ^{
              
@@ -181,12 +197,12 @@
                  [alert show];
              }
              
-              dispatch_semaphore_signal(sema);
+          //    dispatch_semaphore_signal(sema);
          });
      }];
     
-        dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
-        [img release];
+    //    dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
+      //  [img release];
 }
 
 
